@@ -7,25 +7,111 @@
 
 	<title>{block title|striptags|firstupper}Knihovna{/block}</title>
 
-	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
-	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/stylesheet.css">
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/knihovna/style.css">
 	{block head}{/block}
 </head>
 
 <body>
 <script> document.documentElement.className+=' js' </script>
-	<div id="head"></div>
 
-	<div id="body">
-		<ul id="head-menu">
-			<li><a id="domu" href=""><img src="{$basePath}/css/pics/menu/domu.png"></a></li>
-			<li><a id="autori" href=""><img src="{$basePath}/css/pics/menu/autori.png"></a></li>
-			<li><a href=""><img src="{$basePath}/css/pics/menu/knihy.png"></a></li>
-			<li><a href=""><img src="{$basePath}/css/pics/menu/zanry.png"></a></li>
-			<li><a href=""><img src="{$basePath}/css/pics/menu/ctenari.png"></a></li>
-			<li><a href=""><img src="{$basePath}/css/pics/menu/pujceno.png"></a></li>
-		</ul>
-
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo">
+        <h1><a href="index.html">Kni<span>ho</span>vna</a></h1>
+      </div>
+      <div class="menu_nav">
+        <ul>
+          <li><a href="">Domů</a></li>
+          <li><a href="">Autoři</a></li>
+          <li><a href="">Knihy</a></li>
+          <li><a href="">Žánry</a></li>
+          <li><a href="">Čtenáři</a></li>
+          <li><a href="">Půjčeno</a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+      <div class="header_img"><img src="{$basePath}/images/knihovna/main_img.png" alt="" width="298" height="233" />
+        <h2>Seznam všech autorů a knížek</h2>
+        <p>Zjistěte si vše o knížkách, jejich obsah, kým byly napsány či kým byly půjčeny.</p>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <div class="clr"></div>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2>O knihovně</h2>
+          <div class="clr"></div>
+          <p>
+         	Maecenas dignissim mauris in arcu congue tincidunt. Vestibulum elit nunc, accumsan vitae faucibus vel, 
+          	scelerisque a quam. Maecenas dignissim mauris in arcu congue tincidunt. Vestibulum elit nunc, accumsan vitae faucibus vel, scelerisque a quam.
+          </p>
+          <p>
+          	Maecenas dignissim mauris in arcu congue tincidunt. Vestibulum elit nunc, accumsan vitae faucibus vel, 
+          	scelerisque a quam. Aenean at metus id elit bibendum faucibus. Curabitur ultrices ante nec neque consectetur a aliquet libero lobortis.
+          	Ut nibh sem, pellentesque in dictum eu, convallis blandit erat. Cras vehicula tellus nec purus sagittis id scelerisque risus congue. 
+          	Quisque sed semper massa. Donec id lacus mauris, vitae pretium risus. Fusce sed tempor erat. 
+          </p>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="search">
+          <form id="form" name="form" method="post" action="#">
+            <span>
+            <input name="q" type="text" class="keywords" id="textfield" maxlength="50" placeholder="Hledat..." />
+            <input name="b" type="image" src="{$basePath}/images/knihovna/search.gif" class="button" />
+            </span>
+          </form>
+        </div>
+        <div class="gadget">
+          <h2>Menu</h2>
+          <div class="clr"></div>
+          <ul class="sb_menu">
+          	<li><a href="">Domů</a></li>
+          	<li><a href="">Autoři</a></li>
+          	<li><a href="">Knihy</a></li>
+          	<li><a href="">Žánry</a></li>
+          	<li><a href="">Čtenáři</a></li>
+          	<li><a href="">Půjčeno</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Galerie</span></h2>
+        <a href="#"><img src="{$basePath}/images/knihovna/gallery_1.jpg" width="58" height="58" alt="" /></a>
+        <a href="#"><img src="{$basePath}/images/knihovna/gallery_2.jpg" width="58" height="58" alt="" /></a>
+        <a href="#"><img src="{$basePath}/images/knihovna/gallery_3.jpg" width="58" height="58" alt="" /></a>
+        <a href="#"><img src="{$basePath}/images/knihovna/gallery_4.jpg" width="58" height="58" alt="" /></a>
+        <a href="#"><img src="{$basePath}/images/knihovna/gallery_5.jpg" width="58" height="58" alt="" /></a>
+        <a href="#"><img src="{$basePath}/images/knihovna/gallery_6.jpg" width="58" height="58" alt="" /></a> 
+      </div>
+      <div class="col c2">
+        <h2><span>Lorem Ipsum</span></h2>
+        <p>Lorem ipsum dolor<br />
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. <a href="#">Morbi tincidunt, orci ac convallis aliquam</a>, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam.</p>
+      </div>
+      <div class="col c3">
+        <h2><span>Kontakt</span></h2>
+        <p>Nullam quam lorem, tristique non vestibulum nec, consectetur in risus. Aliquam a quam vel leo gravida gravida eu porttitor dui. Nulla pharetra, mauris vitae interdum dignissim, justo nunc suscipit ipsum. <a href="#">mail@priklad.cz</a><br />
+          <a href="#">+420 555 888 999</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="footer">
+      <p class="lf">&copy;2013 <a href="#">Knihovna</a>.</p>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
 		
 		<div id="content">
 			<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
@@ -37,8 +123,6 @@
 			<script src="{$basePath}/js/netteForms.js"></script>
 			<script src="{$basePath}/js/main.js"></script>
 		{/block}
-	</div>
 
-	<div id="end"></div>
 </body>
 </html>
