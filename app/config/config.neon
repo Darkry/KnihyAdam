@@ -8,12 +8,7 @@ common:
 	nette:
 		application:
 			errorPresenter: Error
-
-		database:
-			dsn: 'mysql:host=127.0.0.1;dbname=knihovna'
-			user: root
-			password:
-
+			
 		session:
 			expiration: 14 days
 
