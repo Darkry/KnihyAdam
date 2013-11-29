@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>{block title|striptags|firstupper}Knihovna{/block}</title>
+
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/stylesheet.css">
+	{block head}{/block}
+</head>
+
+<body>
+<script> document.documentElement.className+=' js' </script>
+	<div id="head"></div>
+
+	<div id="body">
+		<ul id="head-menu">
+			<li><a id="domu" href="" onMouseOver="self.document['domu'].src='{$basePath}/css/pics/menu/domu-active.png';" onMouseOut="self.document['domu'].src='{$basePath}/css/pics/menu/domu.png';"><img src="{$basePath}/css/pics/menu/domu.png"></a></li>
+			<li><a id="autori" href="" onMouseOver="self.document['autori'].src='{$basePath}/css/pics/menu/autori-active.png';" onMouseOut="self.document['autori'].src='{$basePath}/css/pics/menu/autori.png';"><img src="{$basePath}/css/pics/menu/autori.png"></a></li>
+			<li><a href=""><img src="{$basePath}/css/pics/menu/knihy.png"></a></li>
+			<li><a href=""><img src="{$basePath}/css/pics/menu/zanry.png"></a></li>
+			<li><a href=""><img src="{$basePath}/css/pics/menu/ctenari.png"></a></li>
+			<li><a href=""><img src="{$basePath}/css/pics/menu/pujceno.png"></a></li>
+		</ul>
+
+		
+		<div id="content">
+			<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+
+			{include #content}
+		</div>
+		{block scripts}
+			<script src="{$basePath}/js/jquery.js"></script>
+			<script src="{$basePath}/js/netteForms.js"></script>
+			<script src="{$basePath}/js/main.js"></script>
+		{/block}
+	</div>
+
+	<div id="end"></div>
+</body>
+</html>

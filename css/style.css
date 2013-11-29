@@ -1,0 +1,43 @@
+html{
+	background: url("pics/background.jpg") repeat;
+	font-family: diavlomedium;
+}
+
+div#head{
+	background: url("pics/head.png") no-repeat;
+	width: 850px;
+	margin: 0 auto;
+	height: 103px;
+}
+
+div#body{
+	background: url("pics/body.png") repeat;
+	width: 850px;
+	height: 350px;
+	margin: 0 auto;
+}
+
+ul#head-menu{
+	list-style-type: none;
+	position: absolute;
+	margin-top: -100px;
+	margin-left: -28px;
+}
+
+ul#head-menu li{
+	float: left;
+	cursor: pointer;
+	cursor: hand;
+}
+
+div#end{
+	background: url("pics/end.png") no-repeat;
+	width: 850px;
+	margin: 0 auto;
+	height: 45px;
+}
+
+h2 {
+	margin: 0;
+	padding: 0;
+}
