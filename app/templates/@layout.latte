@@ -7,7 +7,7 @@
 
 	<title>{block title|striptags|firstupper}Knihovna{/block}</title>
 
-	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/knihovna/style.css">
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
 	{block head}{/block}
 </head>
 
@@ -22,17 +22,17 @@
       </div>
       <div class="menu_nav">
         <ul>
-          <li><a href="">Domů</a></li>
-          <li><a href="">Autoři</a></li>
-          <li><a href="">Knihy</a></li>
-          <li><a href="">Žánry</a></li>
-          <li><a href="">Čtenáři</a></li>
-          <li><a href="">Půjčeno</a></li>
+          <li><a n:href="domu">Domů</a></li>
+          <li><a n:href="autori">Autoři</a></li>
+          <li><a n:href="knihy">Knihy</a></li>
+          <li><a n:href="zanry">Žánry</a></li>
+          <li><a n:href="ctenari">Čtenáři</a></li>
+          <li><a n:href="pujceno">Půjčeno</a></li>
         </ul>
         <div class="clr"></div>
       </div>
       <div class="clr"></div>
-      <div class="header_img"><img src="{$basePath}/images/knihovna/main_img.png" alt="" width="298" height="233" />
+      <div class="header_img"><img src="{$basePath}/images/main_img.png" alt="" width="298" height="233" />
         <h2>Seznam všech autorů a knížek</h2>
         <p>Zjistěte si vše o knížkách, jejich obsah, kým byly napsány či kdo si je půjčil.</p>
         <div class="clr"></div>
@@ -46,16 +46,11 @@
         <div class="article">
           <h2>O knihovně</h2>
           <div class="clr"></div>
-          <p>
-         	Maecenas dignissim mauris in arcu congue tincidunt. Vestibulum elit nunc, accumsan vitae faucibus vel, 
-          	scelerisque a quam. Maecenas dignissim mauris in arcu congue tincidunt. Vestibulum elit nunc, accumsan vitae faucibus vel, scelerisque a quam.
-          </p>
-          <p>
-          	Maecenas dignissim mauris in arcu congue tincidunt. Vestibulum elit nunc, accumsan vitae faucibus vel, 
-          	scelerisque a quam. Aenean at metus id elit bibendum faucibus. Curabitur ultrices ante nec neque consectetur a aliquet libero lobortis.
-          	Ut nibh sem, pellentesque in dictum eu, convallis blandit erat. Cras vehicula tellus nec purus sagittis id scelerisque risus congue. 
-          	Quisque sed semper massa. Donec id lacus mauris, vitae pretium risus. Fusce sed tempor erat. 
-          </p>
+          	<div id="content">
+				<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+
+				{include #content}
+			</div>
         </div>
       </div>
       <div class="sidebar">
@@ -63,7 +58,7 @@
           <form id="form" name="form" method="post" action="#">
             <span>
             <input name="search" type="text" class="keywords" id="textfield" maxlength="50" placeholder="Hledat..." />
-            <input name="submit" type="image" src="{$basePath}/images/knihovna/search.gif" class="button" />
+            <input name="submit" type="image" src="{$basePath}/images/search.gif" class="button" />
             </span>
           </form>
         </div>
@@ -71,12 +66,12 @@
           <h2>Menu</h2>
           <div class="clr"></div>
           <ul class="sb_menu">
-          	<li><a href="">Domů</a></li>
-          	<li><a href="">Autoři</a></li>
-          	<li><a href="">Knihy</a></li>
-          	<li><a href="">Žánry</a></li>
-          	<li><a href="">Čtenáři</a></li>
-          	<li><a href="">Půjčeno</a></li>
+          	<li><a n:href="domu">Domů</a></li>
+          	<li><a n:href="autori">Autoři</a></li>
+          	<li><a n:href="knihy">Knihy</a></li>
+          	<li><a n:href="zanry">Žánry</a></li>
+          	<li><a n:href="ctenari">Čtenáři</a></li>
+          	<li><a n:href="pujceno">Půjčeno</a></li>
           </ul>
         </div>
       </div>
@@ -87,12 +82,12 @@
     <div class="fbg_resize">
       <div class="col c1">
         <h2><span>Galerie</span></h2>
-        <a href="#"><img src="{$basePath}/images/knihovna/gallery_1.jpg" width="58" height="58" alt="" /></a>
-        <a href="#"><img src="{$basePath}/images/knihovna/gallery_2.jpg" width="58" height="58" alt="" /></a>
-        <a href="#"><img src="{$basePath}/images/knihovna/gallery_3.jpg" width="58" height="58" alt="" /></a>
-        <a href="#"><img src="{$basePath}/images/knihovna/gallery_4.jpg" width="58" height="58" alt="" /></a>
-        <a href="#"><img src="{$basePath}/images/knihovna/gallery_5.jpg" width="58" height="58" alt="" /></a>
-        <a href="#"><img src="{$basePath}/images/knihovna/gallery_6.jpg" width="58" height="58" alt="" /></a> 
+        <a href="#"><img src="{$basePath}/images/gallery_1.jpg" width="58" height="58" alt="" /></a>
+        <a href="#"><img src="{$basePath}/images/gallery_2.jpg" width="58" height="58" alt="" /></a>
+        <a href="#"><img src="{$basePath}/images/gallery_3.jpg" width="58" height="58" alt="" /></a>
+        <a href="#"><img src="{$basePath}/images/gallery_4.jpg" width="58" height="58" alt="" /></a>
+        <a href="#"><img src="{$basePath}/images/gallery_5.jpg" width="58" height="58" alt="" /></a>
+        <a href="#"><img src="{$basePath}/images/gallery_6.jpg" width="58" height="58" alt="" /></a> 
       </div>
       <div class="col c2">
         <h2><span>Lorem Ipsum</span></h2>
@@ -112,12 +107,6 @@
     </div>
   </div>
 </div>
-		
-		<div id="content">
-			<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
-
-			{include #content}
-		</div>
 		{block scripts}
 			<script src="{$basePath}/js/jquery.js"></script>
 			<script src="{$basePath}/js/netteForms.js"></script>

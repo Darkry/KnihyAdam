@@ -9,7 +9,7 @@ body {
 html, .main {
 	padding:0;
 	margin:0;
-	background:#f1f1f1 url("../../images/knihovna/main_bg.gif") top repeat-x;
+	background:#f1f1f1 url("../images/main_bg.gif") top repeat-x;
 }
 .clr {
 	clear:both;
@@ -213,19 +213,19 @@ ul.sb_menu li a {
 	text-decoration:none;
 	margin-left:-12px;
 	padding-left:22px;
-	background:url("../../images/knihovna/li_a_hover.gif") left no-repeat;
+	background:url("../images/li_a_hover.gif") left no-repeat;
 }
 ul.sb_menu li a:hover {
 	color:#78bbe6;
 	text-decoration:underline;
-	background:url("../../images/knihovna/li_a.gif") left no-repeat;
+	background:url("../images/li_a.gif") left no-repeat;
 }
 ul.sb_menu li a:hover {
 	text-decoration:underline;
 }
 .fbg {
 	padding:10px 0 0 0;
-	background:#393939 url("../../images/knihovna/fbg_bg.gif") bottom repeat-x;
+	background:#393939 url("../images/fbg_bg.gif") bottom repeat-x;
 	margin:10px 0 0 0;
 }
 .fbg_resize {
