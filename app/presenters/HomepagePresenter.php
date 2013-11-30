@@ -51,7 +51,7 @@ class HomepagePresenter extends BasePresenter
 
 		$this->cModel->addUser($val->name, $val->email);
 		$this->flashMessage("Uživatel byl úspěšně přidán.", "success");
-		$this->redirect("default");
+		$this->redirect("ctenari");
 	}
 
 }

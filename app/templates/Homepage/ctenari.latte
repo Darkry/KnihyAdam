@@ -1,6 +1,7 @@
 {block content}
 	<h2>Čtenáři</h2>
 		<div class="clr"></div>
+		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
 		<h3 class="titleCtenari">Přidat čtenáře</h3>
 		<div class="addUserForm">
 			{form addUserForm}

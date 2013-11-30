@@ -11,6 +11,12 @@ html, .main {
 	margin:0;
 	background:#f1f1f1 url("../images/main_bg.gif") top repeat-x;
 }
+
+.flash {
+	color: red;
+	margin-bottom: -7px;
+}
+
 .clr {
 	clear:both;
 	padding:0;
