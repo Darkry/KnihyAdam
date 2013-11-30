@@ -72,6 +72,9 @@ a:hover {
 	width:970px;
 	padding:20px 0 0 0;
 }
+.header_img .main_img{
+	position: absolute;
+}
 .header_img img {
 	float:left;
 }
@@ -166,7 +169,7 @@ form input:focus {
 }
 
 .content {
-	padding:10px 0 0 0;
+	padding:110px 0 0 0;
 }
 .content_resize {
 	margin:0 auto;
