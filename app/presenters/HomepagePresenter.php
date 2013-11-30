@@ -1,5 +1,6 @@
 <?php
 use \Nette\Application\UI\Form;
+use \Nette\Utils\Html;
 
 class HomepagePresenter extends BasePresenter
 {
@@ -18,9 +19,11 @@ class HomepagePresenter extends BasePresenter
 	public function createComponentAddUserForm() {
 		$form = new Form();
 
-		$form->addText("name", "Jméno: ")->setRequired("Prosím vyplňte Vaše jméno.");
+		$form->addText("name", "Jméno: ")->setRequired("Prosím vyplňte Vaše jméno.")
+										 ->setAttribute('placeholder', 'Vaše jméno...');
 		$form->addText("email", "E-mail: ")->setRequired("Prosím, vyplňte Váš e-mail.")
-										   ->addRule(Form::EMAIL, "Zadaná e-mailová adresa není platná.");
+										   ->addRule(Form::EMAIL, "Zadaná e-mailová adresa není platná.")
+										   ->setAttribute('placeholder', 'Váš e-mail...');
 
 
 		$form->addSubmit("submit", "Přidat uživatele");
