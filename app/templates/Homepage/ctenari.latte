@@ -1,19 +1,23 @@
 {block content}
+	<h2>Čtenáři</h2>
+		<div class="clr"></div>
+		<h3 class="titleCtenari">Přidat čtenáře</h3>
+		<div class="addUserForm">
+			{form addUserForm}
+				{label name /}<br>
+				<span>{input name}</span><br><br>
+				{label email /}<br>
+				<span>{input email}</span><br><br>
+				{input submit}
+			{/form addUserForm}
+		</div>
+{/block}
 
-<h2>Čtenáři</h2>
-<div class="clr"></div>
-<div class="addUserForm">
-{form addUserForm}
-
-<ul class="errors" n:if="$form->hasErrors()">
-        <li n:foreach="$form->errors as $error">{$error}</li>
-</ul>
-{label name /}<br>
-<span>{input name}</span><br><br>
-{label email /}<br>
-<span>{input email}</span><br><br>
-{input submit}
-{/form addUserForm}
-</div>
-
+{block search}
+	{form searchForm}
+		<span>
+		{input search}
+		{input submit}
+		</span>
+	{/form searchForm}
 {/block}

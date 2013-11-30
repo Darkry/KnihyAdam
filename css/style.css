@@ -144,7 +144,7 @@ a:hover {
 	height:29px;
 	margin:0;
 }
-.search form .keywords {
+.search form #frmsearchForm-search {
 	width:220px;
 	line-height:13px;
 	height:13px;
@@ -184,7 +184,7 @@ a:hover {
 	height:29px;
 	margin:0;
 }
-.search form .button {
+.search form #frmsearchForm-submit {
 	float:left;
 	margin:0;
 	padding:4px 0 0 0;
@@ -322,4 +322,9 @@ ul.sb_menu li a:hover {
 }
 .footer .lf {
 	float:left;
+}
+
+.titleCtenari {
+	margin-bottom: -3px;
+	font-weight: lighter;
 }

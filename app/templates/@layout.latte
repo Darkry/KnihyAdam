@@ -4,15 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="robots" content="{$robots}" n:ifset="$robots">
+  {ifCurrent default}
+    <meta http-equiv="refresh" content="0;url={$basePath}/homepage/domu">
+  {/ifCurrent}
 	<title>{block title|striptags|firstupper}Knihovna{/block}</title>
-
 	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
 	{block head}{/block}
 </head>
 
 <body>
 <script> document.documentElement.className+=' js' </script>
-
 <div class="main">
   <div class="header">
     <div class="header_resize">
@@ -64,12 +65,7 @@
       </div>
       <div class="sidebar">
         <div class="search">
-          <form id="form" name="form" method="post" action="#">
-            <span>
-            <input name="search" type="text" class="keywords" id="textfield" maxlength="50" placeholder="Hledat..." />
-            <input name="submit" type="image" src="{$basePath}/images/search.gif" class="button" />
-            </span>
-          </form>
+        {include #search}
         </div>
         <div class="gadget">
           <h2>Menu</h2>
@@ -116,12 +112,11 @@
     </div>
   </div>
 </div>
-		{block scripts}
-			<script src="{$basePath}/js/jquery.js"></script>
-			<script src="{$basePath}/js/netteForms.js"></script>
-			<script src="{$basePath}/js/main.js"></script>
-			<script src="{$basePath}/js/changingPics.js"></script>
-		{/block}
-
+{block scripts}
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/netteForms.js"></script>
+	<script src="{$basePath}/js/main.js"></script>
+	<script src="{$basePath}/js/changingPics.js"></script>
+{/block}
 </body>
 </html>

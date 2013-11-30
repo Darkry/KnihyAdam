@@ -17,20 +17,33 @@ class HomepagePresenter extends BasePresenter
 	}
 
 	public function createComponentAddUserForm() {
-		$form = new Form();
+		$formCtenari = new Form();
 
-		$form->addText("name", "Jméno: ")->setRequired("Prosím vyplňte Vaše jméno.")
+		$formCtenari->addText("name", "Jméno: ")->setRequired("Prosím, vyplňte Vaše jméno.")
 										 ->setAttribute('placeholder', 'Vaše jméno...');
-		$form->addText("email", "E-mail: ")->setRequired("Prosím, vyplňte Váš e-mail.")
+		$formCtenari->addText("email", "E-mail: ")->setRequired("Prosím, vyplňte Váš e-mail.")
 										   ->addRule(Form::EMAIL, "Zadaná e-mailová adresa není platná.")
 										   ->setAttribute('placeholder', 'Váš e-mail...');
 
 
-		$form->addSubmit("submit", "Přidat uživatele");
+		$formCtenari->addSubmit("submit", "Přidat uživatele");
 
-		$form->onSuccess[] = callback($this, "addUserFormSubmitted");
+		$formCtenari->onSuccess[] = callback($this, "addUserFormSubmitted");
 
-		return $form;
+		return $formCtenari;
+	}
+
+	public function createComponentSearchForm() {
+		$formSearch = new Form();
+
+		$formSearch->addText("search")->setRequired("Prosím, vyplňte hledané slovo.")
+									  ->setAttribute('placeholder', 'Hledat...');
+
+		$formSearch->addImage("submit", "../images/search.gif");
+
+		//$formSearch->onSuccess[] = callback($this, "searchFormSubmitted");
+
+		return $formSearch;
 	}
 
 	public function addUserFormSubmitted(Form $form) {
