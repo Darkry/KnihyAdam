@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="robots" content="{$robots}" n:ifset="$robots">
-	<title>{block title|striptags|firstupper}Knihovna{/block}</title>
+	{include #.title}
 	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
 	{block head}{/block}
 </head>
