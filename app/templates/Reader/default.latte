@@ -16,4 +16,11 @@
 				{input submit}
 			{/form addUserForm}
 		</div>
+
+		<table id="ctenari">
+			<tr><th>Jméno</th><th>E-mail</th><th></th></tr>
+			{foreach $ctenari as $ctenar}
+				<tr><td>{$ctenar->jmeno}</td><td>{$ctenar->email}</td><td><a n:href="detail, $ctenar->id">Detail</a></td></tr>
+			{/foreach}
+		</table>
 {/block}

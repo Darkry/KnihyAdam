@@ -1,0 +1,12 @@
+{block .title}
+	<title>{block title|striptags|firstupper}Knihovna - {$jmeno}{/block}</title>
+{/block}
+
+{block content}
+	<h2>{$jmeno}</h2>
+		<div class="clr"></div>
+		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+		<strong>E-mail: {$email}</strong>
+
+	<h3>Půjčené knížky:</h3>
+{/block}
