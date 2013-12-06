@@ -39,7 +39,7 @@ class HomepagePresenter extends BasePresenter
 		$formSearch->addText("search")->setRequired("Prosím, vyplňte hledané slovo.")
 									  ->setAttribute('placeholder', 'Hledat...');
 
-		$formSearch->addImage("submit", "../images/search.gif");
+		$formSearch->addImage("submit", $this->template->basePath."/images/search.gif");
 
 		//$formSearch->onSuccess[] = callback($this, "searchFormSubmitted");
 
