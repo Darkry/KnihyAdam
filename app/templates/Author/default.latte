@@ -2,7 +2,25 @@
 	<title>{block title|striptags|firstupper}Knihovna - Autoři{/block}</title>
 {/block}
 
-{block #content}
+{block content}
 	<h2>Autoři</h2>
 		<div class="clr"></div>
+		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+		<h3 class="titlePage">Přidat autora</h3>
+		<div class="addAuthorForm">
+			{form addAuthorForm}
+				{label name /}<br>
+				<span>{input name}</span><br><br>
+				{label dilo /}<br>
+				<span>{input dilo}</span><br><br>
+				{input submit}
+			{/form addAuthorForm}
+		</div>
+		<h3 class="titlePage">Seznam autorů</h3>
+		<table id="autori" class="tabulka">
+			<tr><th>Jméno</th><th>Dílo</th><th>Detail</th></tr>
+			{foreach $autori as $autor}
+				<tr><td>{$autor->jmeno}</td><td>{$autor->dilo}</td><td><a n:href="detail, $autor->id">Detail</a></td></tr>
+			{/foreach}
+		</table>
 {/block}

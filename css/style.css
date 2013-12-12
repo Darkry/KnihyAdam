@@ -1,4 +1,15 @@
 @charset "utf-8";
+table.tabulka, table.tabulka tr th, table.tabulka tr td{
+	border: 1px solid #dcdcdd;
+	border-collapse: collapse;
+	margin-top: 5px;
+	width: 500px;
+	background-color: white;
+	text-align: center;
+}
+table.tabulka tr th, table.tabulka tr td{
+	padding: 5px;
+}
 body {
 	margin:0;
 	padding:0;
@@ -189,6 +200,34 @@ a:hover {
 	height:29px;
 	margin:0;
 }
+.addAuthorForm form #frmaddAuthorForm-name, .addAuthorForm form #frmaddAuthorForm-dilo {
+	width:250px;
+	line-height:13px;
+	height:13px;
+	float:left;
+	background:none;
+	border:0;
+	padding:8px 0px;
+	margin:0;
+	font:normal 11px Arial, Helvetica, sans-serif;
+	color:#767676;
+}
+.addAuthorForm form #frmaddAuthorForm-submit {
+	width: 120px;
+	height: 29px;
+	background-color: white;
+	color: #767676;
+}
+.addAuthorForm span {
+	display:block;
+	float:left;
+	background:#fff;
+	border:1px solid #dcdcdd;
+	width:250px;
+	padding:0 5px;
+	height:29px;
+	margin:0;
+}
 .search form #frmsearchForm-submit {
 	float:left;
 	margin:0;
@@ -329,7 +368,7 @@ ul.sb_menu li a:hover {
 	float:left;
 }
 
-.titleCtenari {
+.titlePage {
 	margin-bottom: -3px;
 	font-weight: lighter;
 	color: #595959;

@@ -41,7 +41,7 @@ class ReaderPresenter extends BasePresenter
 
 		$this->cModel->addUser($val->name, $val->email);
 		$this->flashMessage("Uživatel byl úspěšně přidán.", "success");
-		$this->redirect("ctenari");
+		$this->redirect("default");
 	}
 
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!DETAIL

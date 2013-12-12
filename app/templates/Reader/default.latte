@@ -6,7 +6,7 @@
 	<h2>Čtenáři</h2>
 		<div class="clr"></div>
 		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
-		<h3 class="titleCtenari">Přidat čtenáře</h3>
+		<h3 class="titlePage">Přidat čtenáře</h3>
 		<div class="addUserForm">
 			{form addUserForm}
 				{label name /}<br>
@@ -16,9 +16,9 @@
 				{input submit}
 			{/form addUserForm}
 		</div>
-
-		<table id="ctenari">
-			<tr><th>Jméno</th><th>E-mail</th><th></th></tr>
+		<h3 class="titlePage">Seznam čtenářů</h3>
+		<table id="ctenari" class="tabulka">
+			<tr><th>Jméno</th><th>E-mail</th><th>Detail</th></tr>
 			{foreach $ctenari as $ctenar}
 				<tr><td>{$ctenar->jmeno}</td><td>{$ctenar->email}</td><td><a n:href="detail, $ctenar->id">Detail</a></td></tr>
 			{/foreach}
