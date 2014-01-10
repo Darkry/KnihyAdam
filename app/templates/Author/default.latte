@@ -11,8 +11,8 @@
 			{form addAuthorForm}
 				{label name /}<br>
 				<span>{input name}</span><br><br>
-				{label dilo /}<br>
-				<span>{input dilo}</span><br><br>
+				{label prijmeni /}<br>
+				<span>{input prijmeni}</span><br><br>
 				{input submit}
 			{/form addAuthorForm}
 		</div>
@@ -20,7 +20,7 @@
 		<table id="autori" class="tabulka">
 			<tr><th>Jméno</th><th>Dílo</th><th>Detail</th></tr>
 			{foreach $autori as $autor}
-				<tr><td>{$autor->jmeno}</td><td>{$autor->dilo}</td><td><a n:href="detail, $autor->id">Detail</a></td></tr>
+				<tr><td>{$autor->jmeno}</td><td>{$autor->prijmeni}</td><td><a n:href="detail, $autor->id">Detail</a></td></tr>
 			{/foreach}
 		</table>
 {/block}

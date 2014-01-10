@@ -22,8 +22,8 @@ class AuthorPresenter extends BasePresenter
 
 		$formAutori->addText("name", "Jméno: ")->setRequired("Prosím, vyplňte jméno autora.")
 										 ->setAttribute('placeholder', 'Jméno autora...');
-		$formAutori->addText("dilo", "Dílo: ")->setRequired("Prosím, vyplňte dílo autora.")
-										   ->setAttribute('placeholder', 'Dílo autora...');
+		$formAutori->addText("prijmeni", "Příjmení: ")->setRequired("Prosím, vyplňte příjmení autora.")
+										   ->setAttribute('placeholder', 'Příjmení autora...');
 
 
 		$formAutori->addSubmit("submit", "Přidat autora");
@@ -36,7 +36,7 @@ class AuthorPresenter extends BasePresenter
 	public function addAuthorFormSubmitted(Form $form) {
 		$val = $form->getValues();
 
-		$this->cModel->addAuthor($val->name, $val->dilo);
+		$this->cModel->addAuthor($val->name, $val->prijmeni);
 		$this->flashMessage("Autor byl úspěšně přidán.", "success");
 		$this->redirect("default");
 	}
@@ -44,7 +44,7 @@ class AuthorPresenter extends BasePresenter
 	public function renderDetail($id) {
 		$author = $this->cModel->getAuthor($id);
 		$this->template->jmeno = $author->jmeno;
-		$this->template->dilo = $author->dilo;
+		$this->template->prijmeni = $author->prijmeni;
 	}
 
 }

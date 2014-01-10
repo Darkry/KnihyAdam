@@ -4,8 +4,8 @@ namespace Knihovna;
 class AutorRepository extends Repository
 {
 
-	public function addAuthor($name, $dilo) {
-		$this->getTable()->insert(array("jmeno" => $name, "dilo" => $dilo));
+	public function addAuthor($name, $prijmeni) {
+		$this->getTable()->insert(array("jmeno" => $name, "prijmeni" => $prijmeni));
 	}
 
 	public function getAllAuthors() {
