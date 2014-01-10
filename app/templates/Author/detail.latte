@@ -1,0 +1,21 @@
+{block .title}
+	<title>{block title|striptags|firstupper}{$jmeno} {$prijmeni} - Knihovna{/block}</title>
+{/block}
+
+{block content}
+	<h2>{$jmeno} {$prijmeni}</h2>
+		<div class="clr"></div>
+		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+		<h3 class="titlePage">Přidat autora</h3>
+		<div class="addAuthorForm">
+			{form addAuthorForm}
+				{label name /}<br>
+				<span>{input name}</span><br><br>
+				{label prijmeni /}<br>
+				<span>{input prijmeni}</span><br><br>
+				{input submit}
+			{/form addAuthorForm}
+		</div>
+
+		<a n:href="deleteAuthor!, $id" id="deleteAuthor">Smazat autora</a>
+{/block}

@@ -45,6 +45,19 @@ class AuthorPresenter extends BasePresenter
 		$author = $this->cModel->getAuthor($id);
 		$this->template->jmeno = $author->jmeno;
 		$this->template->prijmeni = $author->prijmeni;
+		$this->template->id = $author->id;
+	}
+
+	public function handleDeleteAuthor($delId) {
+		if($this->cModel->getAuthorBooksCount($delId) > 0) {
+			$this->flashMessage("Autor nemohl být smazán, protože v naší databázi jsou od něj uloženy nějaké knihy.", "error");
+			$this->redirect("this");
+		}
+		else {
+			$this->cModel->deleteAuthor($delId);
+			$this->flashMessage("Autor byl úspěšně smazán z naší databáze.", "success");
+			$this->redirect("default");
+		}
 	}
 
 }
