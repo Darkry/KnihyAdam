@@ -200,7 +200,7 @@ a:hover {
 	height:29px;
 	margin:0;
 }
-.addAuthorForm form #frmaddAuthorForm-name, .addAuthorForm form #frmaddAuthorForm-prijmeni {
+form input[type=text]{
 	width:250px;
 	line-height:13px;
 	height:13px;
@@ -212,7 +212,7 @@ a:hover {
 	font:normal 11px Arial, Helvetica, sans-serif;
 	color:#767676;
 }
-.addAuthorForm form #frmaddAuthorForm-submit {
+form input[type=submit] {
 	width: 120px;
 	height: 29px;
 	background-color: white;

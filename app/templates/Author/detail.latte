@@ -6,15 +6,15 @@
 	<h2>{$jmeno} {$prijmeni}</h2>
 		<div class="clr"></div>
 		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
-		<h3 class="titlePage">Přidat autora</h3>
+		<h3 class="titlePage">Upravit autora</h3>
 		<div class="addAuthorForm">
-			{form addAuthorForm}
+			{form editAuthorForm}
 				{label name /}<br>
 				<span>{input name}</span><br><br>
 				{label prijmeni /}<br>
 				<span>{input prijmeni}</span><br><br>
 				{input submit}
-			{/form addAuthorForm}
+			{/form editAuthorForm}
 		</div>
 
 		<a n:href="deleteAuthor!, $id" id="deleteAuthor">Smazat autora</a>

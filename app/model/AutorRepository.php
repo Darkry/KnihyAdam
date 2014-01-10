@@ -24,4 +24,7 @@ class AutorRepository extends Repository
 		$this->getTable()->find($id)->delete();
 	}
 	
+	public function editAuthor($name, $prijmeni, $id) {
+		$this->getTable()->find($id)->fetch()->update(array("jmeno" => $name, "prijmeni" => $prijmeni));
+	}
 }
