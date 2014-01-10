@@ -1,0 +1,3 @@
+Žánrů:
+	- výpis žánrů (zobrazaná i ikona)
+	- detail (název, ikona) + možnost změnit název + smazat žánr (pokud neexistují knihy v něm)

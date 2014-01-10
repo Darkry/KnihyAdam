@@ -4,5 +4,11 @@
 
 {block #content}
 	<h2>Žánry</h2>
-		<div class="clr"></div>
+		{form addGenreForm}
+				{label name /}<br>
+				<span>{input name}</span><br><br>
+				{label icon /}<br>
+				<span>{input icon}</span><br><br>
+				{input submit}
+			{/form addGenreForm}
 {/block}

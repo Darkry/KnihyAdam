@@ -4,6 +4,7 @@
 log/*
 temp/*
 vendor/*
+upload/*
 !vendor/others
 
 .DS_Store
