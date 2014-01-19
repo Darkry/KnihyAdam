@@ -17,7 +17,9 @@ class BookPresenter extends BasePresenter
 	}
 
 	public function renderDefault() {
-		
+		$books = $this->bookModel->getAllBooks();
+		$this->template->knihy = $books;
+
 	}
 
 	public function createComponentAddBookForm() {
