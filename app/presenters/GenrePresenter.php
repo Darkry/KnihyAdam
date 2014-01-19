@@ -44,11 +44,14 @@ class GenrePresenter extends BasePresenter
 			$img->save(WWW_DIR . "/upload/".$fileName);
 
 			$path = "upload/".$fileName;
+
+			$this->cModel->addGenre($val->name, $path);
+
+			$this->flashMessage("Žánr byl úspěšně přidán.");
+		} else {
+			$this->flashMessage("Nastala chyba při nahrávání obrázku.");			
 		}
 
-		$this->cModel->addGenre($val->name, $path);
-
-		$this->flashMessage("Žánr byl úspěšně přidán.");
 		$this->redirect("this");
 	}
 }
