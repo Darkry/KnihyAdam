@@ -18,7 +18,7 @@
 		</div>
 		<h3 class="titlePage">Seznam autorů</h3>
 		<table id="autori" class="tabulka">
-			<tr><th>Jméno</th><th>Dílo</th><th>Detail</th></tr>
+			<tr><th>Jméno</th><th>Příjmení</th><th>Detail</th></tr>
 			{foreach $autori as $autor}
 				<tr><td>{$autor->jmeno}</td><td>{$autor->prijmeni}</td><td><a n:href="detail, $autor->id">Detail</a></td></tr>
 			{/foreach}
