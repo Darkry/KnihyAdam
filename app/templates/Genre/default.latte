@@ -10,5 +10,12 @@
 				{label icon /}<br>
 				<span>{input icon}</span><br><br>
 				{input submit}
-			{/form addGenreForm}
+		{/form addGenreForm}
+		<h3 class="titlePage">Seznam žánrů</h3>
+		<table id="zanry" class="tabulka">
+			<tr><th></th><th>Název</th><th>Detail</th></tr>
+			{foreach $zanry as $zanr}
+				<tr><td><img src="{$basePath}/{$zanr->ikona}"></td><td>{$zanr->nazev}</td><td><a n:href="detail, $zanr->id">Detail</a></td></tr>
+			{/foreach}
+		</table>
 {/block}

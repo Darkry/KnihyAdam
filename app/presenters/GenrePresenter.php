@@ -13,7 +13,7 @@ class GenrePresenter extends BasePresenter
 	}
 
 	public function renderDefault() {
-		
+		$this->template->zanry = $this->cModel->getAllGenres();
 	}
 
 	public function createComponentAddGenreForm() {
@@ -53,5 +53,49 @@ class GenrePresenter extends BasePresenter
 		}
 
 		$this->redirect("this");
+	}
+
+	public function renderDetail($id) {
+		$zanr = $this->cModel->getGenre($id);
+		$this->template->nazev = $zanr->nazev;
+		$this->template->ikona = $zanr->ikona;
+		$this->template->id = $zanr->id;
+	}
+
+	public function createComponentEditGenreForm() {
+		$formZanry = new Form();
+
+		$formZanry->addText("name", "Název: ")->setRequired("Prosím, vyplňte jméno autora.")
+										 ->setAttribute('placeholder', 'Název žánru...');
+
+		$id = $this->getParameter("id");
+		$data = $this->cModel->getGenre($id);
+		$formZanry->setDefaults(array('name' => $data->nazev));
+
+		$formZanry->addHidden("id", $id);
+		$formZanry->addSubmit("submit", "Upravit údaje");
+
+		$formZanry->onSuccess[] = callback($this, "editGenreFormSubmitted");
+
+		return $formZanry;
+	}
+	public function editGenreFormSubmitted(Form $form) {
+		$val = $form->getValues();
+
+		$this->cModel->editGenre($val->name, $val->id);
+		$this->flashMessage("Údaje byly úspěšně změněny.", "success");
+		$this->redirect("this");
+	}
+
+	public function handleDeleteGenre($delId) {
+		if($this->cModel->getGenreBooksCount($delId) > 0) {
+			$this->flashMessage("Žánr nemohl být smazán, protože v naší databázi jsou od něj uloženy nějaké knihy.", "error");
+			$this->redirect("this");
+		}
+		else {
+			$this->cModel->deleteGenre($delId);
+			$this->flashMessage("Žánr byl úspěšně smazán z naší databáze.", "success");
+			$this->redirect("default");
+		}
 	}
 }

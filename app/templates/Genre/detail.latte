@@ -1,0 +1,19 @@
+{block .title}
+	<title>{block title|striptags|firstupper}{$nazev} - Knihovna{/block}</title>
+{/block}
+
+{block content}
+	<h2><img src="{$basePath}/{$ikona}"> {$nazev}</h2>
+		<div class="clr"></div>
+		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+		<h3 class="titlePage">Upravit žánr</h3>
+		<div class="addGenreForm">
+			{form editGenreForm}
+				{label name /}<br>
+				<span>{input name}</span><br><br>
+				{input submit}
+			{/form editGenreForm}
+		</div>
+
+		<a n:href="deleteGenre!, $id" id="deleteGenre">Smazat žánr</a>
+{/block}
