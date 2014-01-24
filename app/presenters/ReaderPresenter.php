@@ -49,10 +49,10 @@ class ReaderPresenter extends BasePresenter
 	public function createComponentEditReaderForm() {
 		$formCtenari = new Form();
 
-		$formCtenari->addText("name", "Jméno: ")->setRequired("Prosím, vyplňte jméno autora.")
-										 ->setAttribute('placeholder', 'Jméno autora...');
-		$formCtenari->addText("email", "E-mail: ")->setRequired("Prosím, vyplňte příjmení autora.")
-										 ->setAttribute('placeholder', 'E-mail autora...');
+		$formCtenari->addText("name", "Jméno: ")->setRequired("Prosím, vyplňte jméno čtenáře.")
+										 ->setAttribute('placeholder', 'Jméno čtenáře...');
+		$formCtenari->addText("email", "E-mail: ")->setRequired("Prosím, vyplňte příjmení čtenáře.")
+										 ->setAttribute('placeholder', 'E-mail čtenáře...');
 
 		$id = $this->getParameter("id");
 		$data = $this->cModel->getUser($id);
@@ -81,12 +81,12 @@ class ReaderPresenter extends BasePresenter
 
 	public function handleDeleteReader($delId) {
 		if($this->cModel->getReaderBooksCount($delId) > 0) {
-			$this->flashMessage("Autor nemohl být smazán, protože v naší databázi jsou od něj uloženy nějaké knihy.", "error");
+			$this->flashMessage("Čtenář nemohl být smazán, protože má momentálně půjčené nějaké knihy.", "error");
 			$this->redirect("this");
 		}
 		else {
 			$this->cModel->deleteReader($delId);
-			$this->flashMessage("Autor byl úspěšně smazán z naší databáze.", "success");
+			$this->flashMessage("Čtenář byl úspěšně smazán z naší databáze.", "success");
 			$this->redirect("default");
 		}
 	}

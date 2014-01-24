@@ -59,4 +59,9 @@ class BookPresenter extends BasePresenter
 		$this->flashMessage("Kniha byla úspěšně přidána.");
 		$this->redirect("this");
 	}
+
+	public function renderDetail($id) {
+		$b = $this->bookModel->getBook($id);
+		$this->template->nazev = $b->nazev;
+	}
 }
