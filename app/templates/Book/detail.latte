@@ -3,9 +3,14 @@
 {/block}
 
 {block content}
-	<h2>{$nazev}</h2>
+	<h2>{$nazev}</h2><hr>
 		<div class="clr"></div>
 		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
 		<h3 class="titlePage">Upravit knihu</h3>
+		{control editBookForm}
 
+		<h3 class="titlePage">Přidat nové výtisky</h3>
+		<small>Pro odebrání nepůjčených výtisků, napište záporné číslo.</small><br>
+		Stávající počet výtisků: {$vytiskuCelkem}<br>
+		{control addNewCopies}
 {/block}
