@@ -46,10 +46,49 @@ class ReaderPresenter extends BasePresenter
 
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!DETAIL
 
+	public function createComponentEditReaderForm() {
+		$formCtenari = new Form();
+
+		$formCtenari->addText("name", "Jméno: ")->setRequired("Prosím, vyplňte jméno autora.")
+										 ->setAttribute('placeholder', 'Jméno autora...');
+		$formCtenari->addText("email", "E-mail: ")->setRequired("Prosím, vyplňte příjmení autora.")
+										 ->setAttribute('placeholder', 'E-mail autora...');
+
+		$id = $this->getParameter("id");
+		$data = $this->cModel->getUser($id);
+		$formCtenari->setDefaults(array('name' => $data->jmeno, 'email' => $data->email));
+
+		$formCtenari->addHidden("id", $id);
+		$formCtenari->addSubmit("submit", "Upravit údaje");
+
+		$formCtenari->onSuccess[] = callback($this, "editReaderFormSubmitted");
+
+		return $formCtenari;
+	}
+	public function editReaderFormSubmitted(Form $form) {
+		$val = $form->getValues();
+
+		$this->cModel->editReader($val->name, $val->email, $val->id);
+		$this->flashMessage("Údaje byly úspěšně změněny.", "success");
+		$this->redirect("this");
+	}
+
 	public function renderDetail($id) {
 		$user = $this->cModel->getUser($id);
 		$this->template->jmeno = $user->jmeno;
 		$this->template->email = $user->email;
+		$this->template->id = $user->id;}
+
+	public function handleDeleteReader($delId) {
+		if($this->cModel->getReaderBooksCount($delId) > 0) {
+			$this->flashMessage("Autor nemohl být smazán, protože v naší databázi jsou od něj uloženy nějaké knihy.", "error");
+			$this->redirect("this");
+		}
+		else {
+			$this->cModel->deleteReader($delId);
+			$this->flashMessage("Autor byl úspěšně smazán z naší databáze.", "success");
+			$this->redirect("default");
+		}
 	}
 
 }

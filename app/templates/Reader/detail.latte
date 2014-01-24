@@ -6,7 +6,16 @@
 	<h2>{$jmeno}</h2>
 		<div class="clr"></div>
 		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
-		<strong>E-mail: {$email}</strong>
+		<h3 class="titlePage">Upravit čtenáře</h3>
+		<div class="addAuthorForm">
+			{form editReaderForm}
+				{label name /}<br>
+				<span>{input name}</span><br><br>
+				{label email /}<br>
+				<span>{input email}</span><br><br>
+				{input submit}
+			{/form editReaderForm}
+		</div>
 
-	<h3>Půjčené knížky:</h3>
+		<a n:href="deleteReader!, $id" id="deleteReader">Smazat čtenáře</a>
 {/block}
