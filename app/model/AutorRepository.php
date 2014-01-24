@@ -20,6 +20,10 @@ class AutorRepository extends Repository
 		return $this->getTable()->find($id)->fetch()->related("kniha")->count();
 	}
 
+	public function getAllAuthorBooks($id) {
+		return $this->getTable()->find($id)->fetch()->related("kniha");
+	}
+
 	public function deleteAuthor($id) {
 		$this->getTable()->find($id)->delete();
 	}

@@ -6,6 +6,8 @@ class AuthorPresenter extends BasePresenter
 {
 
 	private $cModel;
+	private $genreModel;
+	private $bookModel;
 
 	public function startup() {
 		parent::startup();
@@ -74,6 +76,7 @@ class AuthorPresenter extends BasePresenter
 		$this->template->jmeno = $author->jmeno;
 		$this->template->prijmeni = $author->prijmeni;
 		$this->template->id = $author->id;
+		$this->template->knihy = $this->cModel->getAllAuthorBooks($id);
 	}
 
 	public function handleDeleteAuthor($delId) {

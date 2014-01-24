@@ -18,4 +18,11 @@
 		</div>
 
 		<a n:href="deleteAuthor!, $id" id="deleteAuthor">Smazat autora</a>
+
+		<table id="autori" class="tabulka">
+			<tr><th>Žánr</th><th>Kniha</th><th>Detail</th></tr>
+			{foreach $knihy as $kniha}
+				<tr><td><img src="{$basePath}/{$kniha->ref('zanr')->ikona}"></td><td>{$kniha->nazev}</td><td><a n:href="Book:detail, $kniha->id">Detail</a></td></tr>
+			{/foreach}
+		</table>
 {/block}
