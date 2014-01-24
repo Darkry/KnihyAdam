@@ -60,6 +60,7 @@ class GenrePresenter extends BasePresenter
 		$this->template->nazev = $zanr->nazev;
 		$this->template->ikona = $zanr->ikona;
 		$this->template->id = $zanr->id;
+		$this->template->knihy = $this->cModel->getAllGenreBooks($id);
 	}
 
 	public function createComponentEditGenreForm() {

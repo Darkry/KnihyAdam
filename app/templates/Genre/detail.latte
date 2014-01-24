@@ -16,4 +16,11 @@
 		</div>
 
 		<a n:href="deleteGenre!, $id" id="deleteGenre">Smazat žánr</a>
+
+		<table id="autori" class="tabulka">
+			<tr><th>Kniha</th><th>Autor</th><th>Detail</th></tr>
+			{foreach $knihy as $kniha}
+				<tr><td>{$kniha->nazev}</td><td>{$kniha->ref('autor')->jmeno} {$kniha->ref('autor')->prijmeni}</td><td><a n:href=":Book:detail, $kniha->id">Detail</a></td></tr>
+			{/foreach}
+		</table>
 {/block}

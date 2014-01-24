@@ -27,4 +27,8 @@ class ZanrRepository extends Repository
 	public function getGenreBooksCount($id) {
 		return $this->getTable()->find($id)->fetch()->related("kniha")->count();
 	}
+
+	public function getAllGenreBooks($id) {
+		return $this->getTable()->find($id)->fetch()->related("kniha");
+	}
 }
