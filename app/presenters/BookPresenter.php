@@ -63,6 +63,8 @@ class BookPresenter extends BasePresenter
 	public function renderDetail($id) {
 		$b = $this->bookModel->getBook($id);
 		$this->template->nazev = $b->nazev;
+		$this->template->autor = $b->ref("autor")->jmeno." ".$b->ref("autor")->prijmeni;
+		$this->template->autorid = $b->ref("autor")->id;
 		$this->template->vytiskuCelkem = $b->celkemVytisku;
 		$this->template->volneVytisky = $b->volnychVytisku;
 	}
