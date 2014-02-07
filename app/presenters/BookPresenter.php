@@ -64,6 +64,7 @@ class BookPresenter extends BasePresenter
 		$b = $this->bookModel->getBook($id);
 		$this->template->nazev = $b->nazev;
 		$this->template->vytiskuCelkem = $b->celkemVytisku;
+		$this->template->volneVytisky = $b->volnychVytisku;
 	}
 
 	public function createComponentEditBookForm() {
@@ -118,7 +119,7 @@ class BookPresenter extends BasePresenter
 		$val = $form->getValues();
 
 		$freeCopies = $this->bookModel->getFreeCopiesCount($this->getParameter("id"));
-		if($val->copies < $freeCopies*(-1)) {
+		if($val->copies*(-1) > $freeCopies) {
 			$this->flashMessage("Nemůžete odebrat více výtisků než je momentálně nevypůjčených.");
 		}
 		else {
