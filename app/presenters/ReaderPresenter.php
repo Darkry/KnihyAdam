@@ -6,10 +6,12 @@ class ReaderPresenter extends BasePresenter
 {
 
 	private $cModel;
+	private $bookModel;
 
 	public function startup() {
 		parent::startup();
 		$this->cModel = $this->getService("ctenarRepository");
+		$this->bookModel = $this->getService("knihaRepository");
 	}
 
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!DEFAULT
@@ -94,4 +96,24 @@ class ReaderPresenter extends BasePresenter
 		}
 	}
 
+
+	public function createComponentBorrowBookForm() {
+		$form = new Form();
+
+		$books = $this->bookModel->getAllBooks();
+		$knihy = array();
+		foreach($books as $book) {
+			$knihy[$book->id] = $book->nazev;
+		}
+		$form->addSelect("book", "Kniha: ", $knihy)->setRequired("Musíte vybrat knihu, kterou chcete vypůjčit.");
+		$form->addSubmit("submit", "Vypůjčit");
+
+		$form->onSuccess[] = callback($this, "borrowBookFormSubmitted");
+
+		return $form;
+	}
+
+	public function borrowBookFormSubmitted(Form $form) {
+
+	}
 }
