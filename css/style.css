@@ -72,6 +72,16 @@ a {
 	color:#78bbe6;
 	text-decoration:none;
 }
+
+tr.red {
+	background: red;
+	color: white;
+}
+
+tr.red a {
+	color: white;
+}
+
 a:hover {
 	text-decoration:underline;
 }

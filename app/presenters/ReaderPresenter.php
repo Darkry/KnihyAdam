@@ -77,7 +77,10 @@ class ReaderPresenter extends BasePresenter
 		$user = $this->cModel->getUser($id);
 		$this->template->jmeno = $user->jmeno;
 		$this->template->email = $user->email;
-		$this->template->id = $user->id;}
+		$this->template->id = $user->id;
+		$this->template->knihy = $this->cModel->getAllBorrowedBooksInfo($id);
+		$this->template->dnes = date("Y-m-d H:i:s");
+	}
 
 	public function handleDeleteReader($delId) {
 		if($this->cModel->getReaderBooksCount($delId) > 0) {

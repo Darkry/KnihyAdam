@@ -18,4 +18,22 @@
 		</div>
 
 		<a n:href="deleteReader!, $id" id="deleteReader">Smazat čtenáře</a>
+
+		<hr><br>
+		<h3>Půjčeno:</h3>
+		<table>
+
+			<tr><th>Autor: </th><th>Název: </th><th>Půjčeno do</th></tr>
+
+			<tr n:foreach="$knihy as $kniha" n:class="($kniha['pujcenoDo'] < $dnes) ? red">
+				<td><a n:href="Author:detail, $kniha['autorId']">{$kniha["autor"]}</a></td>
+				<td><a n:href="Book:detail, $kniha['knihaId']">{$kniha["nazev"]}</a></td>
+				<td>{$kniha["pujcenoDo"]|date:"j. n. Y"}</td>
+			</tr>
+
+		</table>
+
+		<h3>Vypůjčit</h3>
+		
+
 {/block}
